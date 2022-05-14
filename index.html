@@ -16,44 +16,50 @@
   </head>
   <body>
     <div class="container">
-        <div class="app-wrapper"></div>
-      <div class="app-outline">   
-        <h1>New York</h1>
-        <ul>
-          <li>Friday 05:00</li>
-          <li>Clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-              <div class="clearfix">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="Clear"
-              class="float-left"
-            />
-            <div class="float-left">
-            12°C | °F
+      <div class="app-wrapper">
+        <div class="app-outline">
+            <div class="overview">
+          <h1>New York</h1>
+          <ul>
+            <li>Friday 05:00</li>
+            <li>Clear</li>
             </div>
+          </ul>
+          
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="Clear"
+                  class="float-left"
+                />
+                <div class="float-left">
+                    <strong>12</strong>
+                   <span class="units">°C |<a href="">°F </a>     
+                   </span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-6">
-            <ul>
-              <li>Precipitation: 0%</li>
-              <li>humidity: 73%</li>
-              <li>Wind: 2 km/h</li>
-            </ul>
+            <div class="col-6">
+              <ul>
+                  
+                <li>Precipitation: 0%</li>
+                <li>humidity: 73%</li>
+                <li>Wind: 2 km/h</li>
+              </ul>
+            </div>
           </div>
         </div>
+        <small>
+          <a href="http://github.com/EkiOvi/Vanilla-weather" target="_blank">
+            Open-source code
+          </a>
+          by Eki Oviasu
+        </small>
       </div>
-      <small>
-        <a href="http://github.com/EkiOvi/Vanilla-weather" target="_blank">
-          Open-source code
-        </a>
-        by Eki Oviasu
-      </small>
     </div>
-    </div>
-    
+
     <script src="src/app.js"></script>
   </body>
 </html>
