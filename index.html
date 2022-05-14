@@ -16,7 +16,8 @@
   </head>
   <body>
     <div class="container">
-      <div class="app-outline">
+        <div class="app-wrapper"></div>
+      <div class="app-outline">   
         <h1>New York</h1>
         <ul>
           <li>Friday 05:00</li>
@@ -24,11 +25,16 @@
         </ul>
         <div class="row">
           <div class="col-6">
+              <div class="clearfix">
             <img
               src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
               alt="Clear"
+              class="float-left"
             />
+            <div class="float-left">
             12°C | °F
+            </div>
+            </div>
           </div>
           <div class="col-6">
             <ul>
@@ -37,16 +43,17 @@
               <li>Wind: 2 km/h</li>
             </ul>
           </div>
-          <small>
-            <a href="http://github.com/EkiOvi/Vanilla-weather" target="_blank">
-              Open-source code
-            </a>
-            by Eki Oviasu
-          </small>
         </div>
       </div>
+      <small>
+        <a href="http://github.com/EkiOvi/Vanilla-weather" target="_blank">
+          Open-source code
+        </a>
+        by Eki Oviasu
+      </small>
     </div>
-
+    </div>
+    
     <script src="src/app.js"></script>
   </body>
 </html>
