@@ -61,3 +61,6 @@ li .second-letter {
 .weather-temperature .active :hover {
   text-decoration: line-through;
 }
+.units a {
+  text-decoration: none;
+}
