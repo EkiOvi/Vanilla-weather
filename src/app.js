@@ -20,19 +20,24 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
-
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun, Mon, Tue, Wed, Thu, Fri, Sat"];
+  return days[day];
+}
 function displayForecast(response) {
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecast.forEach = function (forecastDay) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
           <div class="col-2">
-                 <div class="weather-forecast-date">${formatDay(
+                 <div class="weather-forecast-date">${formatDate(
                    forecastDay.dt
                  )}</div>
                  <img 
@@ -51,7 +56,7 @@ function displayForecast(response) {
                         </div>
                  
              `;
-  };
+  });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -59,7 +64,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   let apiKey = "3c40f355454ee90b6d99421486e6132d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiURL).then(displayForecast);
+  axios.get(apiUrl).then(displayForecast);
 }
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
