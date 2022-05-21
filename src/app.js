@@ -44,7 +44,7 @@ function displayForecast() {
                          12° </span>
                          </div>
                         </div>
-                    </div>
+                 
              `;
   });
   forecastHTML = forecastHTML + `</div>`;
