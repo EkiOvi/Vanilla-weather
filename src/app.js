@@ -1,5 +1,22 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
+  let year = date.getFullYear();
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[date.getMonth()];
+  let dayMonth = date.getDate();
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -18,7 +35,7 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `${day}, ${dayMonth} ${month} ${year} ${hours}:${minutes}`;
 }
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -33,7 +50,7 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 7) {
       forecastHTML =
         forecastHTML +
         `
@@ -130,6 +147,8 @@ function displayCelsiusTemperature(event) {
 
 let celsiusTemperature = null;
 
+search("London");
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -138,6 +157,17 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-search("London");
 
+function searchCurrentLocation(position) {
+  let apiKey = "3c40f355454ee90b6d99421486e6132d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+function getMyLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+}
+
+let locationButton = document.querySelector("#my-location-button");
+locationButton.addEventListener("click", getMyLocation);
 displayForecast();

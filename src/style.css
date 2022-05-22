@@ -23,17 +23,20 @@ li {
 li .second-letter {
   text-transform: capitalize;
 }
+
 .body {
   font-family: Arial, Helvetica, sans-serif;
 }
 .app-wrapper {
-  max-width: 600px;
-  margin: 30px auto;
+  max-width: 650px;
+  margin: 20px auto;
 }
 .app-outline {
   padding: 20px;
-  border: 1px solid #dadde1;
+  border: 1px solid #000000;
   border-radius: 5px;
+  color: black;
+  position: sticky;
 }
 .overview {
   margin-bottom: 20px;
