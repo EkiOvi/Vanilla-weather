@@ -122,8 +122,8 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
+  let city = document.querySelector("#city-input");
+  search(city.value);
 }
 
 function displayFahrenheitTemperature(event) {
@@ -168,6 +168,6 @@ function getMyLocation(event) {
   navigator.geolocation.getCurrentPosition(searchCurrentLocation);
 }
 
-let locationButton = document.querySelector("#my-location-button");
+let locationButton = document.querySelector("#current-button");
 locationButton.addEventListener("click", getMyLocation);
 displayForecast();
