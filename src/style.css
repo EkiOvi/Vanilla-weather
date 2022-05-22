@@ -1,9 +1,10 @@
 h1 {
   color: #48484a;
-  font-size: 24px;
-  font-weight: 350;
+  font-size: 30px;
+  font-weight: 380;
   line-height: 28px;
   margin-bottom: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 ul {
   margin: 0;
@@ -76,8 +77,6 @@ li .second-letter {
 .units a {
   text-decoration: none;
 }
-.name {
-}
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
@@ -101,7 +100,7 @@ li .second-letter {
   margin-left: -1px;
   padding: 10px 20px;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 13px;
 }
 .footer {
   text-align: center;
